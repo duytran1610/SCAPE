@@ -91,7 +91,7 @@ const scraper = (browser, url) => new Promise(async (resolve, reject) => {
                         title: ele.querySelector('h1 > a').innerText,
                         star: ele.querySelector('h1 > span')?.className?.replace(/^\D+/g, ''),
                         class: {
-                            content: ele.querySelector('p'),
+                            content: ele.querySelector('p').innerText,
                             classType: ele.querySelector('p > a > strong').innerText 
                         },
                         address: ele.querySelector('address').innerText,
