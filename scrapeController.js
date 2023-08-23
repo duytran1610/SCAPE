@@ -11,7 +11,7 @@ const scrapeController = async (Browser) => {
         let categories = await scraper.scrapeCategory(browser, url);
         let selectedCategories = categories.filter((item, index) => indexs.some(i => i === index));
 
-        let result0 = await scraper.scraper(browser, selectedCategories[1].link);
+        let result0 = await scraper.scraper(browser, selectedCategories[0].link);
 
         await fs.writeFile('data0.json', JSON.stringify(result0), err => {
             if (err) console.log('Write data in file .json errol: ', err);
@@ -25,14 +25,14 @@ const scrapeController = async (Browser) => {
             else console.log('Add data success!');
         });
 
-        let result2 = await scraper.scraper(browser, selectedCategories[1].link);
+        let result2 = await scraper.scraper(browser, selectedCategories[2].link);
 
         await fs.writeFile('data2.json', JSON.stringify(result2), err => {
             if (err) console.log('Write data in file .json errol: ', err);
             else console.log('Add data success!');
         });
 
-        let result3 = await scraper.scraper(browser, selectedCategories[1].link);
+        let result3 = await scraper.scraper(browser, selectedCategories[3].link);
 
         await fs.writeFile('data3.json', JSON.stringify(result3), err => {
             if (err) console.log('Write data in file .json errol: ', err);
