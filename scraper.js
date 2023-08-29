@@ -81,7 +81,7 @@ const scraper = (browser, url) => new Promise(async (resolve, reject) => {
 
                 // scrape imgs
                 const imgs = await pageDetail.$$eval('#left-col > article > .post-images > .images-swiper-container > div.swiper-wrapper > div.swiper-slide', els => {
-                    return els.map(el => el.querySelector('img')?.src).filter(el => el !== false);
+                    return els.map(el => el.querySelector('img')?.src).filter(el => el !== null);
                 });
                 detailData.imgs = imgs;
 
